@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.starj.mqttchat"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation kotlinDependencies.kotlinStdlib
+    implementation kotlinDependencies.kotlinReflect
+
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.design
+    implementation supportDependencies.recyclerView
+    implementation supportDependencies.constraintLayout
+
+    implementation rxDependencies.rxJava
+    implementation rxDependencies.rxAndroid
+
+    implementation glideDependencies.glide
+    implementation glideDependencies.glideTransformations
+
+    implementation pahoMqtt
+    implementation gson
+    implementation jodaTime
+    implementation chatkit
+    implementation avatarImageView
+    implementation loadingView
+}
