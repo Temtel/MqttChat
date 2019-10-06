@@ -9,11 +9,8 @@ class MainPresenter<MvpView : BaseMvpView> : BaseMvpPresenter<MvpView> {
 
     companion object {
         val defaultChatRooms = listOf(
-                ChatRoom(name = "PacketChat"),
-                ChatRoom(name = "Rocklin Stake"),
-                ChatRoom(name = "SHEMS"),
-                ChatRoom(name = "SacramentoERC"),
-                ChatRoom(name = "Ninjas")
+                ChatRoom(name = "Packetchat"),
+                ChatRoom(name = "LocalOnly")
         )
     }
 
