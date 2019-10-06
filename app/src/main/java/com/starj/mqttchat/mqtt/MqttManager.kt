@@ -47,7 +47,7 @@ class MqttManager(
 
     fun disconnect() = if (mqttClient.isConnected) mqttClient.disconnect() else Unit
 
-    fun publish(message: String) = mqttClient.publish(topic, message.toByteArray(), QOS_LEVEL, false)
+    fun publish(message: String) = mqttClient.publish("Packetchat", message.toByteArray(), QOS_LEVEL, false)
 
-    private fun subscribeOnTopic() = mqttClient.subscribe(topic, QOS_LEVEL, actionOnSubscribed)
+    private fun subscribeOnTopic() = mqttClient.subscribe("Packetchat/#", QOS_LEVEL, actionOnSubscribed)
 }
