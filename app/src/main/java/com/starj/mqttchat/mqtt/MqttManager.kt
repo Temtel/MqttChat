@@ -13,11 +13,11 @@ class MqttManager(
         private val actionOnSubscribed: (String, MqttMessage) -> Unit
 ) {
     companion object {
-        private const val QOS_LEVEL = 1
+        private const val QOS_LEVEL = 0
 
         // TODO : Set account of yours
-        private const val ACCOUNT_USER_NAME = "packetchat"
-        private const val ACCOUNT_PASSWORD = "kn0w1edge"
+       // private const val ACCOUNT_USER_NAME = "packetchat"
+       // private const val ACCOUNT_PASSWORD = "kn0w1edge"
     }
 
     private val mqttClient: MqttClient by lazy {
@@ -28,8 +28,8 @@ class MqttManager(
         MqttConnectOptions().apply {
             isCleanSession = true
             isAutomaticReconnect = true
-            userName = ACCOUNT_USER_NAME
-            password = ACCOUNT_PASSWORD.toCharArray()
+         //   userName = ACCOUNT_USER_NAME
+         //   password = ACCOUNT_PASSWORD.toCharArray()
         }
     }
 
